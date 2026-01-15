@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flappy Bird: Ancient Flight</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="game-container">
+    <canvas id="game-canvas" tabindex="0" aria-label="Flappy Bird Game"></canvas>
+    <div id="menu-overlay" class="glassmorphism">
+      <h1>Flappy Bird: Ancient Flight</h1>
+      <button id="btn-new-game" class="btn green">New Game</button>
+      <button id="btn-settings" class="btn blue">Settings</button>
+      <button id="btn-quit" class="btn red">Quit</button>
+    </div>
+    <div id="settings-overlay" class="glassmorphism hidden" role="dialog" aria-modal="true">
+      <h2>Settings</h2>
+      <label for="eye-size-slider">Bird Eye Size</label>
+      <input type="range" id="eye-size-slider" min="10" max="40" value="20">
+      <label for="color-picker">Bird Body Color</label>
+      <input type="color" id="color-picker" value="#22cc44">
+      <label for="volume-slider">Game Volume</label>
+      <input type="range" id="volume-slider" min="0" max="1" step="0.01" value="1">
+      <label for="mute-toggle">Mute All Sounds</label>
+      <input type="checkbox" id="mute-toggle">
+      <button id="btn-settings-back" class="btn">Back</button>
+    </div>
+    <div id="countdown-overlay" class="glassmorphism hidden">
+      <span id="countdown-number"></span>
+    </div>
+    <div id="gameover-overlay" class="glassmorphism hidden" role="alertdialog" aria-modal="true">
+      <h2>Game Over</h2>
+      <p id="final-score"></p>
+      <button id="btn-restart" class="btn green">Restart</button>
+      <button id="btn-gameover-menu" class="btn">Menu</button>
+    </div>
+    <div id="score-display" aria-live="polite">0</div>
+  </div>
+  <audio id="audio-score" src="assets/score.mp3" preload="auto"></audio>
+  <audio id="audio-hit" src="assets/hit.mp3" preload="auto"></audio>
+  <audio id="audio-music" src="assets/music.mp3" preload="auto" loop></audio>
+  <script src="game.js"></script>
+</body>
+</html>
